@@ -1,0 +1,422 @@
+<x1|12:50:46> hpc
+Password: 
+Last login: Mon Feb 26 10:28:18 2018 from 206.176.6.65
+Welcome to Legacy,
+A University of South Dakota High Performance Computing cluster
+
+Documentation:
+http://rcg.usd.edu/docs
+
+***NOTE***
+* USER HOME DIRECTORIES ARE NOT BACKED UP
+* Computations should not be run directly on this login system.
+* Computational jobs running on this login system will be terminated without warning.
+* Publications resulting from use of this resource should acknowledge: "Computations supporting this project were performed on High Performance Computing systems at the University of South Dakota."
+* Research Computing staff assisting in the project in any way should be acknowledged. For example: "Research Computing staff John Doe provided valuable technical expertise to this project."
+
+If you have any questions, please contact the Help Desk.
+ITS Help Desk
+Academic Commons - I.D. Weeks Room 104
+Submit requests online at http://www.usd.edu/ithelp.
+Helpdesk@usd.edu
+Toll Free:  877-225-0027
+Phone: 605-658-6000
+
+Stuck? Need Help? Come to Supercomputing Office Hours!
+Wednesdays, Noon to 2pm, Churchill-Haines 181
+
+Autoloading zlib-1.2.11
+Autoloading xz-5.2.3
+Autoloading tar-1.29
+Autoloading pixman-0.34.0
+Autoloading libpng-1.6.27
+Autoloading pcre-8.39
+Autoloading ncurses-6.0
+Autoloading libxml2-2.9.4
+Autoloading libffi-3.2.1
+Autoloading glib-2.49.7
+Autoloading gettext-0.19.8.1
+Autoloading freetype-2.7
+Autoloading fontconfig-2.11.1
+Autoloading font-util-1.3.1
+Autoloading openssl-1.0.2k
+Autoloading openmpi-2.0.2
+Autoloading libpciaccess-0.13.4
+Autoloading hwloc-1.11.5
+Autoloading mpfr-3.1.5
+Autoloading gmp-6.1.2
+Autoloading mpc-1.0.3
+Autoloading icu4c-58.2
+Autoloading openblas-0.2.19
+Autoloading sqlite-3.8.5
+Autoloading readline-6.3
+<login-0-0|12:51:06> ll ../
+total 11M
+drwx------ 23 Balaranjan.Selvaratn Balaranjan.Selvaratn  33 Feb 25 14:12 Balaranjan.Selvaratn
+drwxr-xr-x 14 Byron.Li             Byron.Li              32 Feb 22 10:44 Byron.Li
+drwxr-xr-x 21 CJ.Barton            CJ.Barton             38 Feb 27 00:20 CJ.Barton
+drwx------ 11 Clara.Kirkvold       Clara.Kirkvold        23 Feb 21 13:14 Clara.Kirkvold
+drwxr-xr-x 50 deapclean            deapclean             93 Nov 21 10:49 deapclean
+drwx------ 14 Ethan.Hare           Ethan.Hare            25 Feb 26 13:23 Ethan.Hare
+drwxrwx--- 10 exo                  exo                   18 Jan 18 15:49 exo
+drwxr-xr-x 50 Jing.Liu             rdlab                 94 Feb 22 11:25 Jing.Liu
+drwx------ 59 kilin                kilin                 96 Feb 27 01:47 kilin
+drwx------  9 mberry               mberry                19 Feb 27 12:48 mberry
+drwx------  9 Megan.Bruns          Megan.Bruns           25 Feb 25 19:36 Megan.Bruns
+drwx------  8 Miththira.Balasingam Miththira.Balasingam  16 Feb  9 14:44 Miththira.Balasingam
+drwx------ 12 osg                  osg                  576 Feb 27 12:32 osg
+drwx------ 20 Pasan.Fernando       Pasan.Fernando        46 Feb 25 13:29 Pasan.Fernando
+drwxr-xr-x 30 Ryan.MacLellan       Ryan.MacLellan        54 Feb 27 12:50 Ryan.MacLellan
+drwx------ 25 S.Rabbani            S.Rabbani             40 Feb 15 17:11 S.Rabbani
+drwx-----x 23 Sudip.Poudel         Sudip.Poudel          89 Jan 29 17:09 Sudip.Poudel
+drwxr-xr-x 14 Thakur.Bhatta        Thakur.Bhatta         63 Feb 27 12:46 Thakur.Bhatta
+drwxr-xr-x 30 Wenzhao.Wei          Wenzhao.Wei           48 Feb 23 15:06 Wenzhao.Wei
+drwxrws--- 12 ZengLab              ZengLab               20 Sep 25 17:27 ZengLab
+<login-0-0|12:51:16> cd ../Thakur.Bhatta/
+<login-0-0|12:51:19> ls
+ 27             example.txt       include        test.cpp
+ 6              file.cpp          instance.txt   test.root
+ a.out          gaus.C            latex.C        Th228
+ array.cpp      getrandomh.C      line.C         Thakur.Bhatta
+ array.cpp~     h1.C              linepole.C~    Thakur.Bhatta-510745.err
+ Assignment     histo             modified.c     today1.C
+ c1.pdf         histo2.root       oil.txt        today.C
+ cfile.C        histogram1.C      pro.cpp        tree.root
+ cpp           '#histogram2.C#'   rad            treeviewer.C
+ data.C         histogram2.C      rad.C          tryfill.C
+ data.cpp       histogram.cpp     rad.d          tryfill.C~
+ example.root   histo.root        sample.root
+<login-0-0|12:51:20> root try
+tryfill.C~  tryfill.C   
+<login-0-0|12:51:20> root tryfill.C
+root [0] 
+Processing tryfill.C...
+SysError in <TFile::TFile>: could not delete histo2.root (errno: 13) (Permission denied)
+found 0 points
+Warning in <TFile::Write>: file histo2.root not opened in write mode
+root [1] .ls
+ OBJ: TH1F	h1	y distribution : 0 at: 0x1256e50
+ OBJ: TNtuple	ntuple	data from ascii file : 0 at: 0x12a90c0
+root [2] h1.Draw()
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+root [3] .q
+<login-0-0|12:52:01> vim try
+tryfill.C~  tryfill.C   
+<login-0-0|12:52:01> vim tryfill.C
+<login-0-0|12:52:29> root hist
+histo          histogram1.C   histogram.cpp  
+histo2.root    histogram2.C   histo.root     
+<login-0-0|12:52:29> root histo2.root 
+root [0] 
+Attaching file histo2.root as _file0...
+root [1] .ls
+TFile**		histo2.root	
+ TFile*		histo2.root	
+  KEY: TH1F	h1;1	y distribution
+  KEY: TNtuple	ntuple;1	data from ascii file
+root [2] h1.Draw()
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+root [3] .q
+<login-0-0|12:52:42> ls
+ 27             example.txt       include        test.cpp
+ 6              file.cpp          instance.txt   test.root
+ a.out          gaus.C            latex.C        Th228
+ array.cpp      getrandomh.C      line.C         Thakur.Bhatta
+ array.cpp~     h1.C              linepole.C~    Thakur.Bhatta-510745.err
+ Assignment     histo             modified.c     today1.C
+ c1.pdf         histo2.root       oil.txt        today.C
+ cfile.C        histogram1.C      pro.cpp        tree.root
+ cpp           '#histogram2.C#'   rad            treeviewer.C
+ data.C         histogram2.C      rad.C          tryfill.C
+ data.cpp       histogram.cpp     rad.d          tryfill.C~
+ example.root   histo.root        sample.root
+<login-0-0|12:52:43> cd Th228/
+<login-0-0|12:52:50> ls
+histo2.root  histogram.C~  ntuplesample.C  th228_03.chn.dat  tryfill.C~
+histogram.C  newdata.cpp   out2.txt        tryfill.C         unnamed.pdf
+<login-0-0|12:52:50> root try
+tryfill.C~  tryfill.C   
+<login-0-0|12:52:50> root tryfill.C
+root [0] 
+Processing tryfill.C...
+SysError in <TFile::TFile>: could not delete histo2.root (errno: 13) (Permission denied)
+found 8192 points
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Warning in <TFile::Write>: file histo2.root not opened in write mode
+root [1] .q
+<login-0-0|12:53:19> vim try
+tryfill.C~  tryfill.C   
+<login-0-0|12:53:19> vim tryfill.C
+<login-0-0|12:57:10> root
+root [0] 8191*0.35-1.4
+(const double)2.86544999999999982e+03
+root [1] .q
+<login-0-0|12:59:42> vim tryfill.C
+<login-0-0|13:09:19> ls
+histo2.root  histogram.C~  ntuplesample.C  th228_03.chn.dat  tryfill.C~
+histogram.C  newdata.cpp   out2.txt        tryfill.C         unnamed.pdf
+<login-0-0|13:09:20> root try
+tryfill.C~  tryfill.C   
+<login-0-0|13:09:20> root tryfill.C
+root [0] 
+Processing tryfill.C...
+SysError in <TFile::TFile>: could not delete histo2.root (errno: 13) (Permission denied)
+found 8192 points
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+Warning in <TFile::Write>: file histo2.root not opened in write mode
+root [1] TF1 f1(
+end with '}', '@':abort > @
+root [2] TF1 f1("f1","[2]*TMath::Gaus(x,[0],[1])",2040,2080)
+root [3] f1.SetParameters(2055,5,300)
+root [4] h1.Fit("f1","rem")
+ FCN=199.954 FROM MINOS     STATUS=SUCCESSFUL     41 CALLS         209 TOTAL
+                     EDM=1.63018e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.44932e-02  -7.77843e-06   1.58005e-03
+   2  p1           2.64672e+00   5.77088e-02  -2.17004e-04   9.38176e-04
+   3  p2           2.53989e+02   8.30412e+00   8.30412e+00   1.34312e-04
+(class TFitResultPtr)24119872
+root [5] gStyle->SetOptFit(1111)
+root [6] f1.SetParameters(2055,15,3000)
+root [7] h1.Fit("f1","rem")
+ FCN=199.954 FROM MINOS     STATUS=SUCCESSFUL     41 CALLS         246 TOTAL
+                     EDM=4.33184e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.44932e-02  -7.62204e-06   1.60089e-03
+   2  p1           2.64672e+00   5.77088e-02  -2.18511e-04   9.64098e-04
+   3  p2           2.53988e+02   8.30411e+00   8.30411e+00   1.33865e-04
+(class TFitResultPtr)23394320
+root [8] f1.SetParameters(2080,15,3000)
+root [9] h1.Fit("f1","rem")
+ FCN=1518.37 FROM MINOS     STATUS=PROBLEMS      432 CALLS        2015 TOTAL
+                     EDM=9.41654e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           1.03417e+08   4.51786e+07   1.43221e+02  -2.97655e-11
+   2  p1           1.21178e+08   4.01648e+07  -6.30734e+08   2.16053e-14
+   3  p2           1.31924e+01   4.76586e+00   4.76586e+00  -3.85574e-09
+(class TFitResultPtr)23430640
+root [10] h1.Fit("f1","rem")
+ FCN=1518.37 FROM MINOS     STATUS=FAILURE       414 CALLS        1613 TOTAL
+                     EDM=8.25994e-11    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0          -2.39380e+08   4.35801e+07  -0.00000e+00   2.59940e-08
+   2  p1          -1.59444e+08   3.14469e+07   0.00000e+00  -7.66331e-11
+   3  p2           2.82896e+01   2.17833e+01   2.17833e+01  -6.04121e-07
+(class TFitResultPtr)23686384
+^[[A
+root [11] h1.Fit("f1","rem")
+ FCN=1518.37 FROM MINOS     STATUS=FAILURE       485 CALLS        1523 TOTAL
+                     EDM=1.30673e-08    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0          -2.39435e+08   4.48060e+07  -0.00000e+00   1.15282e-08
+   2  p1          -1.59282e+08   3.03350e+07   0.00000e+00  -3.41651e-11
+   3  p2           2.83696e+01   2.18590e+01   2.18590e+01  -1.10724e-04
+(class TFitResultPtr)23430640
+^[[A
+root [12] h1.Fit("f1","rem")
+ FCN=1518.37 FROM MINOS     STATUS=FAILURE       340 CALLS        1541 TOTAL
+                     EDM=9.00409e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0          -2.39435e+08   1.73204e+08   1.81121e+14   0.00000e+00
+   2  p1          -1.59282e+08   5.90111e+07  -5.39025e+44   0.00000e+00
+   3  p2           2.83697e+01   3.33911e+01   3.33911e+01  -3.62223e-04
+(class TFitResultPtr)23430640
+^[[A
+^[[A
+root [13] h1.Fit("f1","rem")
+ FCN=1518.37 FROM MINOS     STATUS=PROBLEMS      561 CALLS        1638 TOTAL
+                     EDM=3.08496e-08    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0          -2.39513e+08   4.50090e+07  -4.31437e+01   3.09257e-15
+   2  p1          -1.59122e+08   2.99876e+07  -8.27144e+01  -2.06168e-15
+   3  p2           2.84552e+01   2.19268e+01   2.19268e+01  -1.69064e-04
+(class TFitResultPtr)24885520
+^[[A
+root [14] h1.Fit("f1","rem")
+ FCN=1518.37 FROM MINOS     STATUS=PROBLEMS      538 CALLS        1585 TOTAL
+                     EDM=9.10223e-11    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0          -2.39513e+08   3.66912e+07  -4.29717e+01  -3.97906e-13
+   2  p1          -1.59122e+08   3.60830e+07  -1.42123e-06   0.00000e+00
+   3  p2           2.84552e+01   2.16781e+01   2.16781e+01  -6.26623e-07
+(class TFitResultPtr)24967056
+^[[A^[[Aroot [15] h1.Fit("f1","rem")
+ FCN=1518.37 FROM MINOS     STATUS=FAILURE       300 CALLS        1350 TOTAL
+                     EDM=2.64064e-08    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0          -2.39579e+08   4.48049e+07  -0.00000e+00  -3.86088e-06
+   2  p1          -1.58907e+08   2.99044e+07   0.00000e+00  -3.12000e-06
+   3  p2           2.85603e+01   2.20074e+01   2.20074e+01  -1.55898e-04
+(class TFitResultPtr)24967056
+^[[Aroot [16] f1.SetParameters(2055,15,3000)
+root [17] h1.Fit("f1","rem")
+ FCN=1885 FROM MINOS     STATUS=FAILURE       130 CALLS         572 TOTAL
+                     EDM=0    STRATEGY= 1  ERROR MATRIX UNCERTAINTY 100.0 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           8.12982e+05   2.00000e+00   1.41421e+00   0.00000e+00
+   2  p1           1.50000e+01   1.41421e+00   1.41421e+00   0.00000e+00
+   3  p2           3.00000e+03   1.41421e+00   1.41421e+00   0.00000e+00
+(class TFitResultPtr)23810400
+root [18] f1.SetParameters(2055,15,3000)
+root [19] h1.Fit("f1","rem")
+ NEW MINIMUM FOUND.  GO BACK TO MINIMIZATION STEP.
+ =================================================
+                                                  V
+                                                  V
+                                                  V
+                                               VVVVVVV
+                                                VVVVV
+                                                 VVV
+                                                  V
+
+ FCN=199.954 FROM MINOS     STATUS=SUCCESSFUL     41 CALLS         960 TOTAL
+                     EDM=6.51484e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.5 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.44198e-02  -1.13773e-05   1.61144e-03
+   2  p1           2.64672e+00   5.77018e-02  -2.11228e-04   6.89335e-04
+   3  p2           2.53989e+02   8.30315e+00   8.30315e+00   1.45174e-04
+(class TFitResultPtr)23686384
+root [20] h1.Fit("f1","rem")
+ NEW MINIMUM FOUND.  GO BACK TO MINIMIZATION STEP.
+ =================================================
+                                                  V
+                                                  V
+                                                  V
+                                               VVVVVVV
+                                                VVVVV
+                                                 VVV
+                                                  V
+
+ FCN=199.954 FROM MINOS     STATUS=SUCCESSFUL     41 CALLS         805 TOTAL
+                     EDM=2.11955e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.44933e-02  -7.93113e-06   1.53650e-03
+   2  p1          -2.64672e+00   5.77011e-02   2.12497e-04  -9.08432e-04
+   3  p2           2.53989e+02   8.30301e+00   8.30301e+00  -1.40277e-04
+(class TFitResultPtr)24129232
+root [21] h1.Fit("f1","rem")
+ NEW MINIMUM FOUND.  GO BACK TO MINIMIZATION STEP.
+ =================================================
+                                                  V
+                                                  V
+                                                  V
+                                               VVVVVVV
+                                                VVVVV
+                                                 VVV
+                                                  V
+
+ FCN=199.954 FROM MINOS     STATUS=SUCCESSFUL     31 CALLS         979 TOTAL
+                     EDM=3.33135e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.44928e-02  -3.35250e-04   4.38526e-03
+   2  p1          -2.64670e+00   5.77008e-02  -5.01348e-04  -3.02695e-03
+   3  p2           2.53992e+02   8.30307e+00   8.30307e+00  -1.50694e-04
+(class TFitResultPtr)24129232
+^[[Aroot [22] f1.SetParameters(2055,2,300)
+root [23] h1.Fit("f1","rem")
+ FCN=199.954 FROM MINOS     STATUS=SUCCESSFUL     31 CALLS         178 TOTAL
+                     EDM=2.40229e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.44929e-02  -1.32560e-05   1.24496e-03
+   2  p1           2.64671e+00   5.77088e-02  -2.07301e-04   6.69991e-04
+   3  p2           2.53991e+02   8.30417e+00   8.30417e+00   1.40395e-04
+(class TFitResultPtr)24063104
+root [24] h1.Fit("f1","rem")
+ FCN=199.954 FROM MINOS     STATUS=SUCCESSFUL     41 CALLS         144 TOTAL
+                     EDM=7.97155e-08    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.44933e-02  -8.35526e-06   1.51527e-03
+   2  p1           2.64671e+00   5.77087e-02  -2.12136e-04   8.60533e-04
+   3  p2           2.53990e+02   8.30412e+00   8.30412e+00   1.33727e-04
+(class TFitResultPtr)24115184
+root [25] f1->Integral(2040,2080)
+(Double_t)1.68504599263236491e+03
+root [26] f1->Integral(2040,2100)
+(Double_t)1.68504599263236332e+03
+root [27] h1->Integral(2050,2065)
+(const Double_t)1.70800000000000000e+03
+root [28] h1->Rebin()
+(class TH1*)0x121c4a0
+root [29] h1.Fit("f1","rem")
+ FCN=183.062 FROM MINOS     STATUS=SUCCESSFUL     41 CALLS         192 TOTAL
+                     EDM=1.08136e-06    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.59838e-02  -1.75901e-06   1.22538e-03
+   2  p1           2.72215e+00   6.03052e-02  -2.17480e-04   4.22502e-04
+   3  p2           4.98860e+02   1.63822e+01   1.63822e+01   6.61000e-05
+(class TFitResultPtr)24116800
+root [30] TF1 f2("f2","[2]*TMath::Gaus(x,[0],[1],1)",2040,2080)
+root [31] f2.SetParameters(2055,2,300)
+root [32] h1.Fit("f2","rem")
+ FCN=183.062 FROM MINOS     STATUS=SUCCESSFUL     21 CALLS         162 TOTAL
+                     EDM=3.33838e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05638e+03   6.59841e-02  -1.49910e-05   1.94268e-05
+   2  p1           2.72214e+00   6.03009e-02   1.67692e-06   1.65933e-04
+   3  p2           3.40391e+03   8.25091e+01   8.25091e+01  -1.23474e-08
+(class TFitResultPtr)24104384
+root [33] f2.Integral(2040,2080)
+(Double_t)3.40390917928908948e+03
+root [34] h1->Integral(h1->FindBin(2050),h1->FindBin(2065))
+Error: Symbol h1 is not defined in current scope  (tmpfile):1:
+Error: Failed to evaluate h1->FindBin(2050)
+Error: Symbol h1 is not defined in current scope  (tmpfile):1:
+Error: Failed to evaluate h1->FindBin(2065)
+*** Interpreter error recovered ***
+root [35] h1->FindBin(2050)
+(Int_t)1026
+root [36] h1->FindBin(2065)
+(Int_t)1033
+root [37] h1->Integral(1026,1033)
+(const Double_t)1.70000000000000000e+03
+root [38] f2->GetParameter(10
+end with '}', '@':abort > @
+root [39] f2->GetParameter(2)
+(const Double_t)3.40390918229454064e+03
+root [40] f2->GetParameter(2)/h1->GetBinWidth()
+Error: Can't call TH1F::GetBinWidth() in current scope (tmpfile):1:
+Possible candidates are...
+(in TH1F)
+(in TH1)
+/home/exo/local/lib/root/libHist.so  -1:-1   0 public: virtual Double_t TH1::GetBinWidth(Int_t bin) const;
+(const double)inf
+*** Interpreter error recovered ***
+root [41] f2->GetParameter(2)/h1->GetBinWidth(1)
+(const double)1.70195459114727032e+03
+root [42] TF1 f2("f2","[2]*TMath::Gaus(x,[0],[1],1) + pol0(3)*(x<[0]) + pol0(4)*(x>=[0])",2040,2080)
+root [43] f2.SetParameters(2055,2.722,3404,0,0)
+root [44] h1.Fit("f2","rem")
+ FCN=13.8394 FROM MINOS     STATUS=SUCCESSFUL     36 CALLS         431 TOTAL
+                     EDM=8.32207e-10    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.05641e+03   6.98515e-02   6.58441e-05  -1.28878e-04
+   2  p1           2.47501e+00   5.77645e-02   1.26109e-04  -1.18458e-03
+   3  p2           3.17811e+03   8.41096e+01   3.53913e-02   4.99441e-07
+   4  p3           1.73471e+01   1.91411e+00  -7.01922e-04   4.95311e-06
+   5  p4           1.19442e+01   1.23047e+00   1.23047e+00   1.44494e-05
+(class TFitResultPtr)24113072
+root [45] 3.40391e+03/3.17811e+03
+(const double)1.07104851625651709e+00
+root [46]   .q
+<login-0-0|13:26:51> cd
+<login-0-0|13:26:52> vim terminal.txt
+<login-0-0|13:27:28> 
+
