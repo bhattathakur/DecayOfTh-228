@@ -25,13 +25,15 @@ void finalcodespectrum(){
  //First Range
  c->cd(1);
  TH1F *h1=(TH1F*)h->Clone("h1");
- h1->GetXaxis()->SetTitle("Energy/Channel");
+ h1->GetXaxis()->SetTitle("Energy(keV)");
  h1->GetXaxis()->CenterTitle();
- h1->GetYaxis()->SetTitle("Counts");
+ h1->GetYaxis()->SetTitle("Counts/Channel");
  h1->GetYaxis()->CenterTitle();
  h1->GetYaxis()->SetTitleOffset(1.5);
  TF1 *f1=new TF1("f1","[2]*TMath::Gaus(x,[0],[1],1)+pol0(3)*(x<[0])+pol0(4)*(x>=[0])");  //Gaus->(x,mean,sigma,normalization) 1->normalization -true
- f1->SetParNames("mean1","SD1","height1","a1","b1");
+ f1->SetParNames("#mu","#sigma","A","a","b");
+ 
+ // f1->SetParNames("mean1","SD1","height1","a1","b1");
  f1->SetParameters(276.8,1.4,236.7,0,0);
  h1->Fit("f1","rem+","",273,280);//r-in given range,e->with better error estimation, m->improve fitting result,last two options are range of fit,
  //+->Add fitted fn to the list of functions
