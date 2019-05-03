@@ -9,7 +9,7 @@ void finalcodespectrum(){
   TCanvas *c=new TCanvas("c","Histogram",500,300);
   c->Divide(4,2);                                //Divide(column,row)
   TFile *f=new TFile("histo2.root","RECREATE");
-  TH1F *h=new TH1F ("h","Spectrum with energy Calibration",8192,-1.4,2900); 
+  TH1F *h=new TH1F ("h","",8192,-1.4,2900); 
   while(1)
     {
       in>>x>>y;
@@ -19,7 +19,8 @@ void finalcodespectrum(){
       h->GetYaxis()->SetTitle("Counts/channel");
       nlines++; 
     }
- printf("found %d points\n",nlines);
+  printf("found %d points\n",nlines);
+  // h->SaveAs("mainmain.pdf");not working 
   
  //First Range
  c->cd(1);
