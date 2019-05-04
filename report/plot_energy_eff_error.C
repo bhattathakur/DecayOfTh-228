@@ -6,7 +6,7 @@
   graph->SetTitle(";""Energy(eV);""Efficiency(%)");
   graph->GetYaxis()->SetTitleOffset(1.10);
   graph->SetMarkerStyle(20);
-  graph->SetMarkerColor(4);
+  graph->SetMarkerColor(1);
   graph->SetLineColor(kRed);
   // graph->SetLineWidth(2);
   graph->Draw("AP");
