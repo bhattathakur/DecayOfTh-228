@@ -33,7 +33,9 @@
 
   graph->Draw();
     pt->Draw();
-    c->Update();
+    
     c->SaveAs("meanvsbin.pdf");
+    c->Update();
+    
   
 }
