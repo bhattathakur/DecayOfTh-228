@@ -235,5 +235,35 @@ After using: n(Th-228)=10 microCurie=10*3.7*e10*10-6,we get : Efficiency(E)=7.61
        
    }
  else cout<<"Unable to one the file\" gaussianmean_bin.txt \""<<endl;
- f->Write();
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // Macro to write measured mean, error in mean, measured number of counts in the peak and error in counts
+  ofstream myout("mean_error_N_error.txt");
+ if(myout.is_open())
+   {
+	   myout<<f1->GetParameter(0)<<"\t"<<f1->GetParError(0)<<"\t"
+		  <<f1->GetParameter(2)/binWidth<<"\t"<<f1->GetParError(2)<<"\n";
+	   myout<<f2->GetParameter(0)<<"\t"<<f2->GetParError(0)<<"\t"
+		  <<f2->GetParameter(2)/binWidth<<"\t"<<f2->GetParError(2)<<"\n";
+	   myout<<f3->GetParameter(0)<<"\t"<<f3->GetParError(0)<<"\t"
+		  <<f3->GetParameter(2)/binWidth<<"\t"<<f3->GetParError(2)<<"\n";
+	   myout<<f4->GetParameter(0)<<"\t"<<f4->GetParError(0)<<"\t"
+		  <<f4->GetParameter(2)/binWidth<<"\t"<<f4->GetParError(2)<<"\n";
+	   myout<<f5->GetParameter(0)<<"\t"<<f5->GetParError(0)<<"\t"
+		  <<f5->GetParameter(2)/binWidth<<"\t"<<f5->GetParError(2)<<"\n";
+	   myout<<f6->GetParameter(0)<<"\t"<<f6->GetParError(0)<<"\t"
+		  <<f6->GetParameter(2)/binWidth<<"\t"<<f6->GetParError(2)<<"\n";
+	   myout<<f7->GetParameter(0)<<"\t"<<f7->GetParError(0)<<"\t"
+		  <<f7->GetParameter(2)/binWidth<<"\t"<<f7->GetParError(2)<<"\n";
+	   myout<<f8->GetParameter(0)<<"\t"<<f8->GetParError(0)<<"\t"
+		  <<f8->GetParameter(2)/binWidth<<"\t"<<f8->GetParError(2)<<"\n";
+   }
+ else
+   {
+     cout<<"Unable to open the file to write mean, error, N and error"<<endl;
+   }
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////
+// myo>Write();
+
  }
